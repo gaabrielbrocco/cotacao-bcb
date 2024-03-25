@@ -50,12 +50,13 @@
           </div>
         </v-form>
       </v-col>
-      <v-row>
+      
+    </v-row>
+    <v-row>
         <v-col cols="12">
           <mostra-valores :controller="controller" />
         </v-col>
       </v-row>
-    </v-row>
   </v-container>
 </template>
 
