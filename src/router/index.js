@@ -1,9 +1,9 @@
 import { createWebHistory, createRouter } from 'vue-router'
 
-import Cambio from "../cambio/view/cambio.vue"
+import Cotacao from "../cotacao/view/cotacao.vue"
 
 const routes = [
-  { path: '/', component: Cambio },
+  { path: '/', component: Cotacao },
 ]
 
 const router = createRouter({

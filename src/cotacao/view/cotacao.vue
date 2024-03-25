@@ -3,10 +3,10 @@
 </template>
 
 <script setup>
-import { cambioControllerImpl } from "../di/di";
+import { cotacaoControllerImpl } from "../di/di";
 import DialogForm from "../components/dialog-form.vue";
 
-const controller = cambioControllerImpl();
+const controller = cotacaoControllerImpl();
 </script>
 
 <style>
