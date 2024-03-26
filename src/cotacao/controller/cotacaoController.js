@@ -32,8 +32,12 @@ const cotacaoController = (buscaCotacaoUseCase, buscaMoedasUseCase) => () => {
 
   const converteValor = async () => {
     await new Promise(resolve => setTimeout(resolve, 200)) 
+    if(!valorDigitado.value) {
+      valorConvertido.value = ""
+      return
+    }
     const valorNumerico = parseFloat(linhas.value[linhas.value.length - 1].cotacaoCompra) * parseFloat(valorDigitado.value);
-    valorConvertido.value = new Intl.NumberFormat({
+    valorConvertido.value = new Intl.NumberFormat('pt-br',{
       style: "currency",
       currency: "BRL",
     }).format(valorNumerico);
