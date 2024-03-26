@@ -8,9 +8,11 @@ const cotacaoController = (buscaCotacaoUseCase, buscaMoedasUseCase) => () => {
   const dataSelecionada = ref("");
   const modelCotacao = ref(new Cotacao({}));
   const itemsPorPagina = ref(5);
-  const colunasTabela = ref(colunas)
-  const linhas = ref([])
-  const totalItens = ref(0)
+  const colunasTabela = ref(colunas);
+  const linhas = ref([]);
+  const totalItens = ref(0);
+  const valorConvertido = ref(null);
+  const valorDigitado = ref(null);
 
   onMounted(async () => {
     moedas.value = await buscaMoedasUseCase();
@@ -18,14 +20,27 @@ const cotacaoController = (buscaCotacaoUseCase, buscaMoedasUseCase) => () => {
 
   const buscaDados = async () => {
     try {
-        linhas.value = await buscaCotacaoUseCase(moedaSelecionada.value,dataSelecionada.value)
-        totalItens.value = linhas.value.length
+      linhas.value = await buscaCotacaoUseCase(
+        moedaSelecionada.value,
+        dataSelecionada.value
+      );
+      totalItens.value = linhas.value.length;
     } catch (error) {
-        console.log(error);
+      console.log(error);
     }
-  }
+  };
 
-  return {
+  const converteValor = async () => {
+    await new Promise(resolve => setTimeout(resolve, 200)) 
+    const valorNumerico = parseFloat(linhas.value[linhas.value.length - 1].cotacaoCompra) * parseFloat(valorDigitado.value);
+    valorConvertido.value = new Intl.NumberFormat({
+      style: "currency",
+      currency: "BRL",
+    }).format(valorNumerico);
+    return valorConvertido.value;
+  };
+
+  return {  
     moedas,
     moedaSelecionada,
     dataSelecionada,
@@ -35,6 +50,9 @@ const cotacaoController = (buscaCotacaoUseCase, buscaMoedasUseCase) => () => {
     colunasTabela,
     linhas,
     totalItens,
+    valorConvertido,
+    converteValor,
+    valorDigitado
   };
 };
 
