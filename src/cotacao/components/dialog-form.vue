@@ -51,18 +51,66 @@
           </div>
         </v-form>
       </v-col>
-      
     </v-row>
     <v-row>
-        <v-col cols="12">
-          <mostra-valores :controller="controller" />
-        </v-col>
-      </v-row>
+      <v-col cols="12">
+        <mostra-valores :controller="controller" />
+      </v-col>
+    </v-row>
+
+    <v-footer class="fluid mt-15 text-center d-flex flex-column">
+      <div>
+        <v-btn
+          v-for="icon in icons"
+          :key="icon"
+          :icon="icon.icon"
+          class="mx-4"
+          variant="text"
+          :href="icon.link"
+          target="_blank"
+        ></v-btn>
+      </div>
+
+      <div class="pt-0 mb-4">
+        Aplicação desenvolvida para buscar cotações de moedas internacionais
+        integrado com o Banco Central do Brasil.
+        <br />
+        Linguagens e Frameworks utilizados: Vue 3, JavaScript, Vuetify, Echarts.
+      </div>
+
+      <v-divider></v-divider>
+
+      <div>
+        {{ new Date().getFullYear() }} —
+        <strong
+          >Cotação Moeda <span>&copy</span> - Gabriel Brocco de Oliveira</strong
+        >
+      </div>
+    </v-footer>
   </v-container>
 </template>
 
 <script setup>
 import MostraValores from "./mostraValores.vue";
+
+const icons = [
+  {
+    icon: "mdi-gmail",
+    link: "mailto:gabsbrocco@gmail.com",
+  },
+  {
+    icon: "fa:fas fa-brands fa-x-twitter",
+    link: "https://x.com/gaabrielbrocco",
+  },
+  {
+    icon: "mdi-linkedin",
+    link: "https://linkedin.com/in/gabrielbrocco",
+  },
+  {
+    icon: "mdi-instagram",
+    link: "https://instagram.com/gaabrielbrocco",
+  },
+];
 
 const formataData = {
   mask: "##/##/####",

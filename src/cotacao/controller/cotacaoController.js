@@ -16,6 +16,7 @@ const cotacaoController =
     const totalItens = ref(0);
     const valorConvertido = ref(null);
     const valorDigitado = ref(null);
+    const mostraGrafico = ref(false)
 
     onMounted(async () => {
       moedas.value = await buscaMoedasUseCase();
@@ -29,6 +30,7 @@ const cotacaoController =
     const buscaDados = async () => {
       try {
         await buscaDias();
+        mostraGrafico.value = true
       } catch (error) {
         console.log(error);
       }
@@ -134,6 +136,7 @@ const cotacaoController =
       valorDigitado.value = null;
       valorConvertido.value = null;
       linhas.value = [];
+      mostraGrafico.value = false
     };
 
     return {
@@ -150,6 +153,7 @@ const cotacaoController =
       converteValor,
       valorDigitado,
       limpaCampos,
+      mostraGrafico
     };
   };
 
