@@ -13,7 +13,7 @@
     <template v-slot:append-inner>
       <v-menu
         v-model:model-value="menu"
-        :close-on-click="true"
+        close-on-click
         :close-on-content-click="false"
         transition="scale-transition"
         location="bottom left"
@@ -117,7 +117,7 @@ const datePicker = ref(dayjs(props.modelValue, props.formato).toDate());
 const mask = ref({ mask: props.tipo == "dia" ? "##/##/####" : "##/####" });
 
 const dataValida = (data) => {
-  return data.isBetween("1900-01-01", "2100-01-01", "day");
+  return data.isBetween("1984-01-01", "2100-01-01", "day");
 };
 
 const changePicker = (value) => {

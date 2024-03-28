@@ -8,7 +8,8 @@
         color="green"
         hide-details
         @update:model-value="controller.converteValor"
-        v-model="controller.valorDigitado.value"
+        v-model.number="controller.valorDigitado.value"
+        type="number"
       >
       </v-text-field>
     </v-col>

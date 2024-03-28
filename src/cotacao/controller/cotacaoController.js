@@ -162,7 +162,7 @@ const cotacaoController =
       converteValor,
       valorDigitado,
       limpaCampos,
-      mostraGrafico
+      mostraGrafico,
     };
   };
 
