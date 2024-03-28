@@ -44,6 +44,13 @@
         :items-length="controller.totalItens.value"
       ></v-data-table>
     </v-row>
+    <v-row class="d-flex justify-center mt-15 text-h5">
+      Cotação de compra da mesma data nos últimos 5 anos:
+    </v-row>
+    <v-row>
+        <div style="width: 100%; height: 300px" id="grafico"></div>
+    </v-row>
+    <v-footer> teste </v-footer>
   </v-container>
 </template>
 

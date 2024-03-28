@@ -23,6 +23,7 @@
                 item-value="simbolo"
                 :items="controller.moedas.value"
                 variant="outlined"
+                @update:model-value="controller.limpaCampos"
               ></v-select>
             </v-col>
           </v-row>
