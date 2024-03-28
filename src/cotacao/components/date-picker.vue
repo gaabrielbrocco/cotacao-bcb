@@ -19,14 +19,11 @@
         location="bottom left"
       >
         <template v-slot:activator="{ props: props }">
-          <v-icon
-            tabindex="-1"
-            v-bind="props"
-            >mdi-calendar</v-icon
-          >
+          <v-icon tabindex="-1" v-bind="props">mdi-calendar</v-icon>
         </template>
 
         <v-date-picker
+          :allowed-dates="allowedDates"
           density="compact"
           v-model:model-value="datePicker"
           v-show="menu"
@@ -187,4 +184,9 @@ const blurTextField = () => {
     return;
   }
 };
+
+function allowedDates(val) {
+  const dayOfWeek = new Date(val).getDay();
+  return !(dayOfWeek === 0 || dayOfWeek === 6);
+}
 </script>
