@@ -29,14 +29,20 @@
           </v-row>
           <v-row class="d-flex justify-center mb-2">
             <v-col cols="12" lg="5">
-              <v-text-field
+              <!-- <v-text-field
                 v-model="controller.dataSelecionada.value"
                 label="Digite a data"
                 v-maska:[formataData]
                 color="green"
                 base-color="green"
                 variant="outlined"
-              ></v-text-field>
+              ></v-text-field> -->
+              <gbo-date-picker
+                nome="Selecione a data"
+                v-model="controller.dataSelecionada.value"
+              >
+
+              </gbo-date-picker>
             </v-col>
           </v-row>
 
@@ -95,26 +101,22 @@ import MostraValores from "./mostraValores.vue";
 
 const icons = [
   {
-    icon: "fa:fas fa-regular fa-envelope",
+    icon: "mdi-gmail",
     link: "mailto:gabsbrocco@gmail.com",
   },
   {
-    icon: "fa:fas fa-brands fa-x-twitter",
-    link: "https://x.com/gaabrielbrocco",
+    icon: "mdi-github",
+    link: "https://github.com/gaabrielbrocco",
   },
   {
-    icon: "fa:fas fa-brands fa-linkedin",
+    icon: "mdi-linkedin",
     link: "https://linkedin.com/in/gabrielbrocco",
   },
   {
-    icon: "fa:fas fa-brands fa-instagram",
+    icon: "mdi-instagram",
     link: "https://instagram.com/gaabrielbrocco",
   },
 ];
-
-const formataData = {
-  mask: "##/##/####",
-};
 
 const { controller } = defineProps({
   controller: {

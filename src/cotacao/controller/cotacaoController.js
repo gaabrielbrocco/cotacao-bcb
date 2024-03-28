@@ -72,7 +72,6 @@ const cotacaoController =
         )
       );
       for (let i = 0; i < datas.length; i++) {
-        debugger
         for(let j = 0; j < retornos.length; j++) {
 
           if(retornos[j].some((value) => datas[i] === value.dataHoraCotacao.split(" - ")[0])) {
