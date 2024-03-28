@@ -1,6 +1,7 @@
 # Cotação Moeda
 
-Aplicação que realiza conversões de moedas internacionais para cotações de compra. Utilizando Vue 3 e Vuetify integrado com API.
+Aplicação desenvolvida para buscar cotações de moedas internacionais integrado com o Banco Central do Brasil.
+Linguagens e Frameworks utilizados: Vue 3, JavaScript, Vuetify, Echarts.
 
 ## ❗️ Link Executável:
 [Cotação Moeda]([https://cotacao-moeda-steel.vercel.app/](https://cotacao-banco-central.vercel.app/))
