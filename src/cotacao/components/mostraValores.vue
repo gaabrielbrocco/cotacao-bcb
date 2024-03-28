@@ -45,7 +45,7 @@
   </v-row>
   <div v-if="controller.mostraGrafico.value">
     <v-row class="d-flex justify-center mt-15 text-h5">
-      Cotação de compra da mesma data nos últimos 5 anos:
+      Cotação de compra da mesma data nos últimos anos:
     </v-row>
   </div>
   <v-row>

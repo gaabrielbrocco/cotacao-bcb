@@ -8,13 +8,17 @@ const buscaCotacaoUseCase = (repository) => async (moeda, data) => {
 
     objRetorno.forEach(function (objeto) {
       if (objeto.tipoBoletim === "Fechamento PTAX") {
+
+        if(!objeto.cotacaoVenda) {
+          return
+        }
         var cotacao = {
           "dataHoraCotacao": objeto.dataHoraCotacao,
           "cotacaoCompra": objeto.cotacaoCompra, 
           "cotacaoVenda": objeto.cotacaoVenda, 
           "tipoBoletim": objeto.tipoBoletim,
         };
-        return a.push(cotacao);
+        a.push(cotacao);
       }
     });
   

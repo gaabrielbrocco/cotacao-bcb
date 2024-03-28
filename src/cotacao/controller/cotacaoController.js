@@ -57,9 +57,10 @@ const cotacaoController =
 
       const datas = [];
 
-      for (let i = 0; i < 5; i++) {
+      for (let i = 0; i < 5; i++) {  
         const dataFinal = moment(data, "YYYY-MM-DD");
         datas.push(dataFinal.subtract(i, "years").format("DD/MM/YYYY"));
+
       }
 
       const obj = {};
@@ -70,9 +71,16 @@ const cotacaoController =
             await buscaCotacaoUseCase(moedaSelecionada.value, value)
         )
       );
-
       for (let i = 0; i < datas.length; i++) {
-        obj[datas[i]] = retornos[i];
+        debugger
+        for(let j = 0; j < retornos.length; j++) {
+
+          if(retornos[j].some((value) => datas[i] === value.dataHoraCotacao.split(" - ")[0])) {
+            obj[datas[i]] = retornos[j];
+          }
+        }
+        
+
       }
 
       linhas.value = await buscaLinhasUseCase(
@@ -108,6 +116,7 @@ const cotacaoController =
             axisLabel: {
               rotate: 30,
             },
+            inverse: true
           },
         ],
         yAxis: {
@@ -122,8 +131,9 @@ const cotacaoController =
               return obj[value][0]?.cotacaoCompra;
             }),
             // data: obj[value].cotacaoCompra,
-            type: "bar",
+            type: "line",
             barWidth: "40%",
+            areaStyle: {}
           },
         ],
       };

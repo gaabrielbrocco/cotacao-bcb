@@ -95,7 +95,7 @@ import MostraValores from "./mostraValores.vue";
 
 const icons = [
   {
-    icon: "mdi-gmail",
+    icon: "fa:fas fa-regular fa-envelope",
     link: "mailto:gabsbrocco@gmail.com",
   },
   {
@@ -103,11 +103,11 @@ const icons = [
     link: "https://x.com/gaabrielbrocco",
   },
   {
-    icon: "mdi-linkedin",
+    icon: "fa:fas fa-brands fa-linkedin",
     link: "https://linkedin.com/in/gabrielbrocco",
   },
   {
-    icon: "mdi-instagram",
+    icon: "fa:fas fa-brands fa-instagram",
     link: "https://instagram.com/gaabrielbrocco",
   },
 ];
