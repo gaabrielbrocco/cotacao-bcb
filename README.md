@@ -3,7 +3,7 @@
 Aplicação que realiza conversões de moedas internacionais para cotações de compra. Utilizando Vue 3 e Vuetify integrado com API.
 
 ## ❗️ Link Executável:
-[Cotação Moeda](https://cotacao-moeda-steel.vercel.app/)
+[Cotação Moeda]([https://cotacao-moeda-steel.vercel.app/](https://cotacao-banco-central.vercel.app/))
 
 ## ❗️ Link Documentação
 
