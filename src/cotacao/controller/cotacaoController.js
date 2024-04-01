@@ -10,7 +10,7 @@ const cotacaoController =
     const moedaSelecionada = ref(null);
     const dataSelecionada = ref("");
     const modelCotacao = ref(new Cotacao({}));
-    const itemsPorPagina = ref(6);
+    const itemsPorPagina = ref(5);
     const colunasTabela = ref(colunas);
     const linhas = ref([]);
     const totalItens = ref(0);
@@ -30,6 +30,7 @@ const cotacaoController =
     const buscaDados = async () => {
       try {
         await buscaDias();
+        converteValor()
         mostraGrafico.value = true
       } catch (error) {
         console.log(error);
@@ -41,7 +42,8 @@ const cotacaoController =
       if (!valorDigitado.value) {
         valorConvertido.value = "";
         return;
-      }
+      } 
+
       const valorNumerico =
         parseFloat(linhas.value[linhas.value.length - 1].cotacaoCompra) *
         parseFloat(valorDigitado.value);
@@ -79,7 +81,6 @@ const cotacaoController =
           }
         }
         
-
       }
 
       linhas.value = await buscaLinhasUseCase(
@@ -108,9 +109,6 @@ const cotacaoController =
         xAxis: [
           {
             type: "category",
-            // data: keys.map((value) => {
-            //   return obj[value].map((o) => o.dataHoraCotacao);
-            // }),
             data: keys,
             axisLabel: {
               rotate: 30,
@@ -129,7 +127,6 @@ const cotacaoController =
             data: keys.map((value) => {
               return obj[value][0]?.cotacaoCompra;
             }),
-            // data: obj[value].cotacaoCompra,
             type: "line",
             barWidth: "40%",
             areaStyle: {}
@@ -141,7 +138,6 @@ const cotacaoController =
     };
 
     const limpaCampos = () => {
-      dataSelecionada.value = "";
       valorDigitado.value = null;
       valorConvertido.value = null;
       linhas.value = [];

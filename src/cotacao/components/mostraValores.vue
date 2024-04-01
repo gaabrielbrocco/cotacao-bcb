@@ -20,6 +20,7 @@
           color="green"
           hide-details
           v-model="controller.valorConvertido.value"
+          readonly
         >
           <template v-slot:append>
             <v-tooltip location="bottom">
@@ -44,14 +45,15 @@
       :items-length="controller.totalItens.value"
     ></v-data-table>
   </v-row>
-  <div v-if="controller.mostraGrafico.value">
+  <div v-show="controller.mostraGrafico.value">
     <v-row class="d-flex justify-center mt-15 text-h5">
       Cotação de compra da mesma data nos últimos anos:
     </v-row>
+
+    <v-row>
+      <div style="width: 100%; height: 300px" id="grafico"></div>
+    </v-row>
   </div>
-  <v-row>
-    <div style="width: 100%; height: 300px" id="grafico"></div>
-  </v-row>
 </template>
 
 <script setup>

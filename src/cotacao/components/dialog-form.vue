@@ -29,19 +29,10 @@
           </v-row>
           <v-row class="d-flex justify-center mb-2">
             <v-col cols="12" lg="5">
-              <!-- <v-text-field
-                v-model="controller.dataSelecionada.value"
-                label="Digite a data"
-                v-maska:[formataData]
-                color="green"
-                base-color="green"
-                variant="outlined"
-              ></v-text-field> -->
               <gbo-date-picker
                 nome="Selecione a data"
                 v-model="controller.dataSelecionada.value"
               >
-
               </gbo-date-picker>
             </v-col>
           </v-row>
