@@ -5,8 +5,8 @@
     persistent-hint
     v-maska:[mask]
     @blur="blurTextField"
-    color="green"
-    base-color="green"
+    color="primary"
+    base-color="primary"
     variant="outlined"
     readonly
   >

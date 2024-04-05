@@ -14,8 +14,8 @@
               <v-select
                 v-model="controller.moedaSelecionada.value"
                 label="Selecione a moeda"
-                color="green"
-                base-color="green"
+                color="primary"
+                base-color="primary"
                 focused
                 :item-title="
                   (item) => `${item.simbolo} - ${item.nomeFormatado}`
@@ -41,7 +41,7 @@
             <v-btn
               size="large"
               text="Buscar"
-              color="green"
+              color="primary"
               @click="controller.buscaDados()"
             >
             </v-btn>
