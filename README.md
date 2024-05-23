@@ -8,7 +8,8 @@ Linguagens e Frameworks utilizados: Vue 3, JavaScript, Vuetify, Echarts.
 
 ## ❗️ Link Documentação
 
-- 📄 [Docs](https://vuetifyjs.com/)
+- 📄 [Vuetify](https://vuetifyjs.com/)
+- 📄 [Vue](https://vuejs.org/)
 
 ## 💿 Instalação
 
