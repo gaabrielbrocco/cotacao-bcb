@@ -4,7 +4,7 @@ Aplicação desenvolvida para buscar cotações de moedas internacionais integra
 Linguagens e Frameworks utilizados: Vue 3, JavaScript, Vuetify, Echarts.
 
 ## ❗️ Link Executável:
-[Cotação Moeda]((https://cotacao-banco-central.vercel.app/))
+[Cotação Moeda](https://cotacao-banco-central.vercel.app/)
 
 ## ❗️ Link Documentação
 
